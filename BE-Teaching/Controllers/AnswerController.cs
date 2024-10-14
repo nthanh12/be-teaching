@@ -90,5 +90,23 @@ namespace BE_Teaching.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("CheckAnswer")]
+        public IActionResult CheckAnswer([FromBody] Dictionary<int, int> questionAnswers)
+        {
+            if (questionAnswers == null || questionAnswers.Count == 0)
+            {
+                return BadRequest("No answers provided.");
+            }
+            try
+            {
+                var response = _answerService.CheckMultipleAnswers(questionAnswers);
+                return Ok(response);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

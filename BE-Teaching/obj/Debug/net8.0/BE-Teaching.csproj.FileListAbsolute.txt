@@ -6,6 +6,7 @@ C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\BE-Teaching
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\BE-Teaching.dll
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\BE-Teaching.pdb
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -22,6 +23,7 @@ C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\BE-Teaching
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\BE-Teaching.csproj.CoreCompileInputs.cache
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\BE-Teaching.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\BE-Teaching.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\BE-Teaching.sourcelink.json
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\thanh\source\repos\BE-Teaching\BE-Teaching\obj\Debug\net8.0\staticwebassets\msbuild.BE-Teaching.Microsoft.AspNetCore.StaticWebAssets.props

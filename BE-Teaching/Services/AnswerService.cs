@@ -1,6 +1,7 @@
 ﻿using BE_Teaching.Models;
 using System.Data.SqlClient;
 using System.Data;
+using Newtonsoft.Json;
 
 namespace BE_Teaching.Services
 {
@@ -44,6 +45,54 @@ namespace BE_Teaching.Services
                         response.StatusCode = 400;
                         response.StatusMessage = "Failed to answer question!";
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = $"An error occurred: {ex.Message}";
+            }
+
+            return response;
+        }
+
+        public Response<Dictionary<int, bool>> CheckMultipleAnswers(Dictionary<int, int> questionAnswers)
+        {
+            Response<Dictionary<int, bool>> response = new Response<Dictionary<int, bool>>();
+            response.Data = new Dictionary<int, bool>();  // Lưu kết quả từng câu hỏi
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    // Chuyển danh sách câu hỏi và đáp án thành JSON
+                    var json = JsonConvert.SerializeObject(
+                        questionAnswers.Select(qa => new { QuestionID = qa.Key, AnswerID = qa.Value })
+                    );
+
+                    SqlCommand cmd = new SqlCommand("sp_Check", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    cmd.Parameters.AddWithValue("@QuestionAnswerJson", json);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int questionID = reader.GetInt32(0); 
+                            bool isCorrect = reader.GetInt32(1) == 1; 
+
+                            // Thêm kết quả vào dictionary
+                            response.Data.Add(questionID, isCorrect);
+                        }
+                    }
+
+                    response.StatusCode = 200;
+                    response.StatusMessage = "Check completed.";
                 }
             }
             catch (Exception ex)

@@ -134,7 +134,6 @@ namespace BE_Teaching.Services
             return response;
         }
 
-
         public Response<string> EditQuestion(int id, Question editQuestion)
         {
             Response<string> response = new Response<string>();

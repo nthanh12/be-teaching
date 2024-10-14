@@ -8,8 +8,7 @@ namespace BE_Teaching.Services
 
         Response<string> AddQuestion(Question newQuestion);
 
-        Response<string> EditQuestion(int id, Question editQuestion)
-            ;
+        Response<string> EditQuestion(int id, Question editQuestion);
         Response<string> DeleteQuestion(int id);
     }
 }

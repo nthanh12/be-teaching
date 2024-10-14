@@ -9,5 +9,6 @@ namespace BE_Teaching.Services
         Response<string> AddAnswer(Answer newAnswer);
         Response<string> EditAnswer(int id, Answer editAnswer);
         Response<string> DeleteAnswer(int id);
+        Response<Dictionary<int, bool>> CheckMultipleAnswers(Dictionary<int, int> questionAnswers);
     }
 }
